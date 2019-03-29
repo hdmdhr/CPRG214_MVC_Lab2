@@ -7,6 +7,10 @@ Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "CPRG214.Assets.Domain", "CP
 EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "CPRG214.Assets.Data", "CPRG214.Assets.Data\CPRG214.Assets.Data.csproj", "{7D00E084-7232-44F9-82DD-EB875C61C78A}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "CPRG214.Assets.BLL", "CPRG214.Assets.BLL\CPRG214.Assets.BLL.csproj", "{E9FA7EE3-FA6E-445C-80A4-D92D203F70E6}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "CPRG214.Asset.App", "CPRG214.Asset.App\CPRG214.Asset.App.csproj", "{53BD81E9-3C41-4A99-AD6D-14F5736E937F}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -21,6 +25,14 @@ Global
 		{7D00E084-7232-44F9-82DD-EB875C61C78A}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{7D00E084-7232-44F9-82DD-EB875C61C78A}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{7D00E084-7232-44F9-82DD-EB875C61C78A}.Release|Any CPU.Build.0 = Release|Any CPU
+		{E9FA7EE3-FA6E-445C-80A4-D92D203F70E6}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{E9FA7EE3-FA6E-445C-80A4-D92D203F70E6}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{E9FA7EE3-FA6E-445C-80A4-D92D203F70E6}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{E9FA7EE3-FA6E-445C-80A4-D92D203F70E6}.Release|Any CPU.Build.0 = Release|Any CPU
+		{53BD81E9-3C41-4A99-AD6D-14F5736E937F}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{53BD81E9-3C41-4A99-AD6D-14F5736E937F}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{53BD81E9-3C41-4A99-AD6D-14F5736E937F}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{53BD81E9-3C41-4A99-AD6D-14F5736E937F}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE

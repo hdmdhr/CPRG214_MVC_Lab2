@@ -3,14 +3,16 @@ using CPRG214.Assets.Data;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore.Infrastructure;
 using Microsoft.EntityFrameworkCore.Metadata;
+using Microsoft.EntityFrameworkCore.Migrations;
 using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
 
 namespace CPRG214.Assets.Data.Migrations
 {
     [DbContext(typeof(AssetsContext))]
-    partial class AssetsContextModelSnapshot : ModelSnapshot
+    [Migration("20190329000008_ModifyNameNotNull")]
+    partial class ModifyNameNotNull
     {
-        protected override void BuildModel(ModelBuilder modelBuilder)
+        protected override void BuildTargetModel(ModelBuilder modelBuilder)
         {
 #pragma warning disable 612, 618
             modelBuilder
