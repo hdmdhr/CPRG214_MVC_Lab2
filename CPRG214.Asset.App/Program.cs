@@ -8,7 +8,7 @@ using Microsoft.AspNetCore.Hosting;
 using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.Logging;
 
-namespace CPRG214.Asset.App
+namespace CPRG214.Assets.App
 {
     public class Program
     {

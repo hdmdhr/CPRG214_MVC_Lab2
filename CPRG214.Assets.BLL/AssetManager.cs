@@ -14,6 +14,16 @@ namespace CPRG214.Assets.BLL
             var context = new AssetsContext();
             return context.Assets.
                 Include(a => a.AssetType).
+                OrderBy(a => a.AssetTypeId).
+                ToList();
+        }
+
+        public static List<Asset> GetAssetsById(int id)
+        {
+            var context = new AssetsContext();
+            return context.Assets.
+                Where(a => a.AssetTypeId == id).
+                Include(a => a.AssetType).
                 ToList();
         }
     }

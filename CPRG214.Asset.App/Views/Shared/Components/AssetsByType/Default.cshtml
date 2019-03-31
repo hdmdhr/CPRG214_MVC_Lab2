@@ -1,0 +1,39 @@
+﻿@model List<Asset>
+
+@{
+    var howMany = Model.Count;
+    var alertType = howMany > 0 ? "alert-success" : "alert-danger";
+}
+
+<hr/>
+
+<h2 class="@alertType">@howMany results were found.</h2>
+
+<table class="table table-dark">
+    <thead>
+    <tr>
+        <th>Tag No</th>
+        <th>Manufacturer</th>
+        <th>Model</th>
+        <th>Description</th>
+        <th>Serial No</th>
+        <th>Asset Type</th>
+    </tr>
+    </thead>
+
+    @foreach (var asset in Model)
+    {
+        <tbody>
+        <tr>
+            <td>@asset.TagNumber</td>
+            <td>@asset.Manufacturer</td>
+            <td>@asset.Model</td>
+            <td>@asset.Description</td>
+            <td>@asset.SerialNumber</td>
+            <td>@asset.AssetType.Name</td>
+        </tr>
+        </tbody>
+    }
+</table>
+
+<hr/>

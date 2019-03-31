@@ -18,9 +18,25 @@ namespace CPRG214.Asset.App.Controllers
         public IActionResult Index()
         {
             var model = AssetManager.GetAllAssets();
+            var types = AssetTypeManager.GetAllAssetTypes().
+                Select(at => new SelectListItem
+                {
+                    Text = at.Name,
+                    Value = at.Id.ToString()
+                }).ToList();
+            types.Insert(0, new SelectListItem { Text = "All Assets", Value = "0" });
+
+            ViewBag.AssetTypes = types;
 
             return View(model);
         }
+
+        public IActionResult GetAssetsByType(int id)
+        {
+            return ViewComponent("AssetsByType", id);
+        }
+
+        //--------------------- Auto-Generated ------------------------------
 
         //// GET: Assets/Details/5
         //public async Task<IActionResult> Details(int? id)

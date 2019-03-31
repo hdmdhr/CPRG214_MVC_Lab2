@@ -4,9 +4,9 @@ using System.Diagnostics;
 using System.Linq;
 using System.Threading.Tasks;
 using Microsoft.AspNetCore.Mvc;
-using CPRG214.Asset.App.Models;
+using CPRG214.Assets.App.Models;
 
-namespace CPRG214.Asset.App.Controllers
+namespace CPRG214.Assets.App.Controllers
 {
     public class HomeController : Controller
     {

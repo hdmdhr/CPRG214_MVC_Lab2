@@ -15,9 +15,4 @@
     <ProjectReference Include="..\CPRG214.Assets.Domain\CPRG214.Assets.Domain.csproj" />
   </ItemGroup>
 
-  <ItemGroup>
-    <Folder Include="ViewComponents\" />
-    <Folder Include="Views\Shared\Components\" />
-  </ItemGroup>
-
 </Project>

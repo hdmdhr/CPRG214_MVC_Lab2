@@ -1,6 +1,6 @@
 using System;
 
-namespace CPRG214.Asset.App.Models
+namespace CPRG214.Assets.App.Models
 {
     public class ErrorViewModel
     {

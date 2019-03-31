@@ -10,7 +10,7 @@ using Microsoft.AspNetCore.Mvc;
 using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.DependencyInjection;
 
-namespace CPRG214.Asset.App
+namespace CPRG214.Assets.App
 {
     public class Startup
     {
