@@ -2,6 +2,7 @@
 using System.Collections.Generic;
 using System.Linq;
 using System.Threading.Tasks;
+using CPRG214.Assets.App.Models;
 using CPRG214.Assets.BLL;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.AspNetCore.Mvc.Rendering;
@@ -18,6 +19,8 @@ namespace CPRG214.Asset.App.Controllers
         public IActionResult Index()
         {
             var model = AssetManager.GetAllAssets();
+
+            // create select list
             var types = AssetTypeManager.GetAllAssetTypes().
                 Select(at => new SelectListItem
                 {
@@ -25,15 +28,62 @@ namespace CPRG214.Asset.App.Controllers
                     Value = at.Id.ToString()
                 }).ToList();
             types.Insert(0, new SelectListItem { Text = "All Assets", Value = "0" });
-
+            // assign select list to a ViewBag property to pass into View
             ViewBag.AssetTypes = types;
 
             return View(model);
         }
 
+        // GET: Assets/GetAssetsByType, called by AJAX
         public IActionResult GetAssetsByType(int id)
         {
             return ViewComponent("AssetsByType", id);
+        }
+
+
+        // GET: Assets/Create
+        public IActionResult Create()
+        {
+            // create select list
+            var types = AssetTypeManager.GetAllAssetTypes().
+                Select(at => new SelectListItem
+                {
+                    Text = at.Name,
+                    Value = at.Id.ToString()
+                }).ToList();
+            // create customized ViewModel
+            var model = new AssetViewModel
+            {
+                Types = types,
+                AssetTypeId = null,
+                Description = null,
+                Manufacturer = null,
+                Model = null,
+                SerialNumber = null,
+                TagNumber = null
+            };
+            // pass created ViewModel to View
+            return View(model);
+        }
+
+        // POST: Assets/Create
+        // To protect from overposting attacks, please enable the specific properties you want to bind to
+        [HttpPost]
+        [ValidateAntiForgeryToken]
+        public async Task<IActionResult> Create(Assets.Domain.Asset asset)
+        {
+            try
+            {
+                AssetManager.AddNewAsset(asset);
+                // no exception, means succeeded, redirect to assets table page
+                return RedirectToAction(nameof(Index)); 
+            }
+            catch
+            {
+                // exception occured, go to create again
+                return View();
+            }
+
         }
 
         //--------------------- Auto-Generated ------------------------------
@@ -54,30 +104,6 @@ namespace CPRG214.Asset.App.Controllers
         //        return NotFound();
         //    }
 
-        //    return View(asset);
-        //}
-
-        //// GET: Assets/Create
-        //public IActionResult Create()
-        //{
-        //    ViewData["AssetTypeId"] = new SelectList(_context.AssetTypes, "Id", "Name");
-        //    return View();
-        //}
-
-        //// POST: Assets/Create
-        //// To protect from overposting attacks, please enable the specific properties you want to bind to, for 
-        //// more details see http://go.microsoft.com/fwlink/?LinkId=317598.
-        //[HttpPost]
-        //[ValidateAntiForgeryToken]
-        //public async Task<IActionResult> Create([Bind("Id,TagNumber,Manufacturer,Model,Description,SerialNumber,AssetTypeId")] Assets.Domain.Asset asset)
-        //{
-        //    if (ModelState.IsValid)
-        //    {
-        //        _context.Add(asset);
-        //        await _context.SaveChangesAsync();
-        //        return RedirectToAction(nameof(Index));
-        //    }
-        //    ViewData["AssetTypeId"] = new SelectList(_context.AssetTypes, "Id", "Name", asset.AssetTypeId);
         //    return View(asset);
         //}
 

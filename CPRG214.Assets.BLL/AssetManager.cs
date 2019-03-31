@@ -9,6 +9,7 @@ namespace CPRG214.Assets.BLL
 {
     public class AssetManager
     {
+        // get all
         public static List<Asset> GetAllAssets()
         {
             var context = new AssetsContext();
@@ -17,7 +18,7 @@ namespace CPRG214.Assets.BLL
                 OrderBy(a => a.AssetTypeId).
                 ToList();
         }
-
+        // get a certain type assets
         public static List<Asset> GetAssetsById(int id)
         {
             var context = new AssetsContext();
@@ -25,6 +26,13 @@ namespace CPRG214.Assets.BLL
                 Where(a => a.AssetTypeId == id).
                 Include(a => a.AssetType).
                 ToList();
+        }
+        // add a new asset
+        public static void AddNewAsset(Asset asset)
+        {
+            var context = new AssetsContext();
+            context.Assets.Add(asset);
+            context.SaveChanges();
         }
     }
 }
