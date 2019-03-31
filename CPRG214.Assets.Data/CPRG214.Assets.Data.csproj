@@ -16,4 +16,8 @@
     <ProjectReference Include="..\CPRG214.Assets.Domain\CPRG214.Assets.Domain.csproj" />
   </ItemGroup>
 
+  <ItemGroup>
+    <Folder Include="Migrations\" />
+  </ItemGroup>
+
 </Project>

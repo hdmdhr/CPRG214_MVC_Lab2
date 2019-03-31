@@ -26,7 +26,8 @@
                     <span class="icon-bar"></span>
                     <span class="icon-bar"></span>
                 </button>
-                <a asp-area="" asp-controller="Home" asp-action="Index" class="navbar-brand">Assets Tracker</a>
+                
+                <a asp-area="" asp-controller="Home" asp-action="Index" class="navbar-brand">Tech Assets</a>
             </div>
             <div class="navbar-collapse collapse">
                 <ul class="nav navbar-nav">
@@ -39,12 +40,14 @@
     </nav>
 
     <partial name="_CookieConsentPartial" />
+    
 
     <div class="container body-content">
         @RenderBody()
+
         <hr />
-        <footer>
-            <p>&copy; 2019 - A Little Bit Of Everything</p>
+        <footer class="text-center">
+            <h4>&copy; 2019 - A Little Bit Of Everything</h4>
         </footer>
     </div>
 
